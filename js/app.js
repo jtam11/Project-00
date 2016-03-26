@@ -13,7 +13,6 @@ $(document).on('ready', function () {
       left: "+=20px"
       }, 50);
       oneWon();
-      console.log(isKeyOn);
     }
   });
 
@@ -37,7 +36,7 @@ $('#reset').on('click', function resetRace() {
 
 /* Player 1 Win Verifier */
 function oneWon() {
-  if( parseInt( $('#one').css('left') ) >= 900 ) {
+  if( parseInt( $('#one').css('left') ) >= 860 ) {
     alert('Player One Wins!');
     isKeyOn = false;
   }
@@ -45,7 +44,7 @@ function oneWon() {
 
 /* Player 2 Win Verifier */
 function twoWon() {
-  if( parseInt( $('#two').css('left') ) >= 900 ) {
+  if( parseInt( $('#two').css('left') ) >= 860 ) {
     alert('Player Two Wins!');
     isKeyOn = false;
   }
