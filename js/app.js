@@ -1,8 +1,33 @@
-$(document).on('ready',function() {
+
+
+$(document).on('ready', function () {
+
+  var player1 = $('#one');
+  var player2 = $('#two');
 
   console.log('JS is loaded!');
 
+  /* Moving Player 1 */
+  $(document).on('keydown', function (event) {
+   if (event.keyCode === 65) {
+     player1.animate({
+     left: "+=10px"
+     });
+   }
+  });
 
+  /* Moving Player 2 */
+  $(document).on('keydown', function (event) {
+   if (event.keyCode === 74) {
+     player2.animate({
+     left: "+=10px"
+     });
+   }
+  });
+
+  // $('#one').on('click', function move() {
+  //   $(this).animate({ left: "+=10px" });
+  // });
 
 });
 
@@ -14,6 +39,3 @@ $(document).on('ready',function() {
 //
 //   };
 // }
-$("#one").on('click', function move() {
-  $(this).animate({ "left": "+=50px" });
-});
