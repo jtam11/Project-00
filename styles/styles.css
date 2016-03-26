@@ -5,16 +5,15 @@
   width: 100%;
 }
 .player {
+  position: absolute;
   background-color: orange;
   height: 44px;
-  width: 5%;
+  width: 44px;
 }
   #one {
-    position: absolute;
     left: 18px;
   }
   #two {
     background-color: black;
-    position: absolute;
     left: 18px;
   }
