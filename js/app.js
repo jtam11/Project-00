@@ -11,8 +11,8 @@ $(document).on('ready', function () {
   $(document).on('keydown', function (event) {
    if (event.keyCode === 65) {
      player1.animate({
-     left: "+=10px"
-     });
+     left: "+=20px"
+   }, 50);
    }
   });
 
@@ -20,16 +20,18 @@ $(document).on('ready', function () {
   $(document).on('keydown', function (event) {
    if (event.keyCode === 74) {
      player2.animate({
-     left: "+=10px"
-     });
+     left: "+=20px"
+   }, 50);
    }
   });
 
-  // $('#one').on('click', function move() {
-  //   $(this).animate({ left: "+=10px" });
-  // });
-
+  /* Reset Button */
+  $('#reset').on('click', function resetRace() {
+    player1.animate({left: '18px'}, 50);
+    player2.animate({left: '18px'}, 50);
+  });
 });
+
 
 // function Sprite(name, color) {
 //

@@ -17,3 +17,8 @@
     background-color: black;
     left: 18px;
   }
+#bottom {
+  position:relative;
+  margin: 0 auto;
+  text-align: center;
+}
