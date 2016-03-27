@@ -1,6 +1,6 @@
 var player1 = $('#one');
 var player2 = $('#two');
-var isKeyOn = true;
+var isKeyOn = false;
 var oneKey = '';
 var twoKey = '';
 
@@ -8,9 +8,6 @@ var twoKey = '';
 $(document).on('ready', function () {
 
   console.log('JS is loaded!');
-  oneRandomChar();
-  twoRandomChar();
-
 
     /* Moving Player 1 */
   $(document).on('keydown', function (event) {
@@ -22,7 +19,7 @@ $(document).on('ready', function () {
         }, 50);
         oneRandomChar();
         oneWon();
-      } else if (event.keyCode === 83 || event.keyCode === 68 || event.keyCode === 70) {
+      } else if ( (event.keyCode === 83 || event.keyCode === 68 || event.keyCode === 70) && isKeyOn ) {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
@@ -39,7 +36,7 @@ $(document).on('ready', function () {
         }, 50);
         oneRandomChar();
         oneWon();
-      } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 70) {
+      } else if ( (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 70) && isKeyOn ) {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
@@ -56,7 +53,7 @@ $(document).on('ready', function () {
         }, 50);
         oneRandomChar();
         oneWon();
-      } else if (event.keyCode === 65 || event.keyCode === 83 || event.keyCode === 70) {
+      } else if ( (event.keyCode === 65 || event.keyCode === 83 || event.keyCode === 70) && isKeyOn ) {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
@@ -73,7 +70,7 @@ $(document).on('ready', function () {
         }, 50);
         oneRandomChar();
         oneWon();
-      } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 83) {
+      } else if ( (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 83) && isKeyOn ) {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
@@ -95,7 +92,7 @@ $(document).on('ready', function () {
         }, 50);
         twoRandomChar();
         twoWon();
-      } else if (event.keyCode === 75 || event.keyCode === 76 || event.keyCode === 186) {
+      } else if ( (event.keyCode === 75 || event.keyCode === 76 || event.keyCode === 186) && isKeyOn ) {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
@@ -112,7 +109,7 @@ $(document).on('ready', function () {
         }, 50);
         twoRandomChar();
         twoWon();
-      } else if (event.keyCode === 74 || event.keyCode === 76 || event.keyCode === 186) {
+      } else if ( (event.keyCode === 74 || event.keyCode === 76 || event.keyCode === 186) && isKeyOn ) {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
@@ -129,7 +126,7 @@ $(document).on('ready', function () {
         }, 50);
         twoRandomChar();
         twoWon();
-      } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 186) {
+      } else if ( (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 186) && isKeyOn ) {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
@@ -146,7 +143,7 @@ $(document).on('ready', function () {
         }, 50);
         twoRandomChar();
         twoWon();
-      } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 76) {
+      } else if ( (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 76) && isKeyOn ) {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
@@ -159,15 +156,22 @@ $(document).on('ready', function () {
   });
 });
 
+/* Start Button */
+$('#start').on('click', function startRace() {
+  this.disabled = true;
+  oneRandomChar();
+  twoRandomChar();
+  isKeyOn = true;
+});
+
 /* Reset Button */
 $('#reset').on('click', function resetRace() {
   player1.animate({left: '18px'}, 50);
   player1.empty();
-  oneRandomChar();
   player2.animate({left: '18px'}, 50);
   player2.empty();
-  twoRandomChar();
-  isKeyOn = true;
+  isKeyOn = false;
+  $('#start').attr('disabled', false);
 });
 
 /* Player 1 Win Verifier */

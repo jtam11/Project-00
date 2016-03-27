@@ -39,3 +39,11 @@ p {
   margin: 0 auto;
   text-align: center;
 }
+  #start {
+    margin-right: 50px;
+    width: 100px;
+  }
+  #reset{
+    margin-left: 50px;
+    width: 100px;
+  }
