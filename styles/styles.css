@@ -6,17 +6,23 @@
 }
 .player {
   position: absolute;
-  background-color: orange;
   height: 44px;
   width: 44px;
 }
   #one {
+    text-align: center;
+    background-color: #ff8c00;
     left: 18px;
   }
   #two {
-    background-color: black;
+    text-align: center;
+    background-color: #00e7eb;
     left: 18px;
   }
+p {
+  font-size: 30px;
+  font-weight: bold;
+}
 .finish {
   float: right;
   width: 50px;
