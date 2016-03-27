@@ -24,9 +24,11 @@ $(document).on('ready', function () {
         oneWon();
       } else if (event.keyCode === 83 || event.keyCode === 68 || event.keyCode === 70) {
         player1.empty();
-        player1.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player1.css('left') ) > 18 ) {
+          player1.animate({
+          left: "-=20px"
+          }, 50);
+        }
         oneRandomChar();
       }
     } else if (oneKey === 's') {
@@ -39,9 +41,11 @@ $(document).on('ready', function () {
         oneWon();
       } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 70) {
         player1.empty();
-        player1.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player1.css('left') ) > 18 ) {
+          player1.animate({
+          left: "-=20px"
+          }, 50);
+        }
         oneRandomChar();
       }
     } else if (oneKey === 'd') {
@@ -54,9 +58,11 @@ $(document).on('ready', function () {
         oneWon();
       } else if (event.keyCode === 65 || event.keyCode === 83 || event.keyCode === 70) {
         player1.empty();
-        player1.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player1.css('left') ) > 18 ) {
+          player1.animate({
+          left: "-=20px"
+          }, 50);
+        }
         oneRandomChar();
       }
     } else if (oneKey === 'f') {
@@ -69,9 +75,11 @@ $(document).on('ready', function () {
         oneWon();
       } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 83) {
         player1.empty();
-        player1.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player1.css('left') ) > 18 ) {
+          player1.animate({
+          left: "-=20px"
+          }, 50);
+        }
         oneRandomChar();
       }
     }
@@ -89,9 +97,11 @@ $(document).on('ready', function () {
         twoWon();
       } else if (event.keyCode === 75 || event.keyCode === 76 || event.keyCode === 186) {
         player2.empty();
-        player2.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player2.css('left') ) > 18 ) {
+          player2.animate({
+          left: "-=20px"
+          }, 50);
+        }
         twoRandomChar();
       }
     } else if (twoKey === 'k') {
@@ -104,9 +114,11 @@ $(document).on('ready', function () {
         twoWon();
       } else if (event.keyCode === 74 || event.keyCode === 76 || event.keyCode === 186) {
         player2.empty();
-        player2.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player2.css('left') ) > 18 ) {
+          player2.animate({
+          left: "-=20px"
+          }, 50);
+        }
         twoRandomChar();
       }
     } else if (twoKey === 'l') {
@@ -119,9 +131,11 @@ $(document).on('ready', function () {
         twoWon();
       } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 186) {
         player2.empty();
-        player2.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player2.css('left') ) > 18 ) {
+          player2.animate({
+          left: "-=20px"
+          }, 50);
+        }
         twoRandomChar();
       }
     } else if (twoKey === ';') {
@@ -134,9 +148,11 @@ $(document).on('ready', function () {
         twoWon();
       } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 76) {
         player2.empty();
-        player2.animate({
-        left: "-=20px"
-        }, 50);
+        if ( parseInt( player2.css('left') ) > 18 ) {
+          player2.animate({
+          left: "-=20px"
+          }, 50);
+        }
         twoRandomChar();
       }
     }
@@ -156,7 +172,7 @@ $('#reset').on('click', function resetRace() {
 
 /* Player 1 Win Verifier */
 function oneWon() {
-  if( parseInt( $('#one').css('left') ) >= 850 ) {
+  if( parseInt( player1.css('left') ) >= 850 ) {
     alert('Player One Wins!');
     isKeyOn = false;
   }
@@ -164,7 +180,7 @@ function oneWon() {
 
 /* Player 2 Win Verifier */
 function twoWon() {
-  if( parseInt( $('#two').css('left') ) >= 850 ) {
+  if( parseInt( player2.css('left') ) >= 850 ) {
     alert('Player Two Wins!');
     isKeyOn = false;
   }
