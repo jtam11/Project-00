@@ -1,36 +1,144 @@
 var player1 = $('#one');
 var player2 = $('#two');
 var isKeyOn = true;
+var oneKey = '';
+var twoKey = '';
 
 
 $(document).on('ready', function () {
 
   console.log('JS is loaded!');
-
   oneRandomChar();
   twoRandomChar();
 
+
     /* Moving Player 1 */
   $(document).on('keydown', function (event) {
-    if (event.keyCode === 65 && isKeyOn) {
-      player1.empty();
-      player1.animate({
-      left: "+=20px"
-      }, 50);
-      oneRandomChar();
-      oneWon();
+    if (oneKey === 'a') {
+      if (event.keyCode === 65 && isKeyOn) {
+        player1.empty();
+        player1.animate({
+        left: "+=20px"
+        }, 50);
+        oneRandomChar();
+        oneWon();
+      } else if (event.keyCode === 83 || event.keyCode === 68 || event.keyCode === 70) {
+        player1.empty();
+        player1.animate({
+        left: "-=20px"
+        }, 50);
+        oneRandomChar();
+      }
+    } else if (oneKey === 's') {
+      if (event.keyCode === 83 && isKeyOn) {
+        player1.empty();
+        player1.animate({
+        left: "+=20px"
+        }, 50);
+        oneRandomChar();
+        oneWon();
+      } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 70) {
+        player1.empty();
+        player1.animate({
+        left: "-=20px"
+        }, 50);
+        oneRandomChar();
+      }
+    } else if (oneKey === 'd') {
+      if (event.keyCode === 68 && isKeyOn) {
+        player1.empty();
+        player1.animate({
+        left: "+=20px"
+        }, 50);
+        oneRandomChar();
+        oneWon();
+      } else if (event.keyCode === 65 || event.keyCode === 83 || event.keyCode === 70) {
+        player1.empty();
+        player1.animate({
+        left: "-=20px"
+        }, 50);
+        oneRandomChar();
+      }
+    } else if (oneKey === 'f') {
+      if (event.keyCode === 70 && isKeyOn) {
+        player1.empty();
+        player1.animate({
+        left: "+=20px"
+        }, 50);
+        oneRandomChar();
+        oneWon();
+      } else if (event.keyCode === 65 || event.keyCode === 68 || event.keyCode === 83) {
+        player1.empty();
+        player1.animate({
+        left: "-=20px"
+        }, 50);
+        oneRandomChar();
+      }
     }
   });
 
   /* Moving Player 2 */
   $(document).on('keydown', function (event) {
-    if (event.keyCode === 74 && isKeyOn) {
-      player2.empty();
-      player2.animate({
-      left: "+=20px"
-      }, 50);
-      twoRandomChar();
-      twoWon();
+    if (twoKey === 'j') {
+      if (event.keyCode === 74 && isKeyOn) {
+        player2.empty();
+        player2.animate({
+        left: "+=20px"
+        }, 50);
+        twoRandomChar();
+        twoWon();
+      } else if (event.keyCode === 75 || event.keyCode === 76 || event.keyCode === 186) {
+        player2.empty();
+        player2.animate({
+        left: "-=20px"
+        }, 50);
+        twoRandomChar();
+      }
+    } else if (twoKey === 'k') {
+      if (event.keyCode === 75 && isKeyOn) {
+        player2.empty();
+        player2.animate({
+        left: "+=20px"
+        }, 50);
+        twoRandomChar();
+        twoWon();
+      } else if (event.keyCode === 74 || event.keyCode === 76 || event.keyCode === 186) {
+        player2.empty();
+        player2.animate({
+        left: "-=20px"
+        }, 50);
+        twoRandomChar();
+      }
+    } else if (twoKey === 'l') {
+      if (event.keyCode === 76 && isKeyOn) {
+        player2.empty();
+        player2.animate({
+        left: "+=20px"
+        }, 50);
+        twoRandomChar();
+        twoWon();
+      } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 186) {
+        player2.empty();
+        player2.animate({
+        left: "-=20px"
+        }, 50);
+        twoRandomChar();
+      }
+    } else if (twoKey === ';') {
+      if (event.keyCode === 186 && isKeyOn) {
+        player2.empty();
+        player2.animate({
+        left: "+=20px"
+        }, 50);
+        twoRandomChar();
+        twoWon();
+      } else if (event.keyCode === 74 || event.keyCode === 75 || event.keyCode === 76) {
+        player2.empty();
+        player2.animate({
+        left: "-=20px"
+        }, 50);
+        twoRandomChar();
+      }
     }
   });
 });
@@ -48,7 +156,7 @@ $('#reset').on('click', function resetRace() {
 
 /* Player 1 Win Verifier */
 function oneWon() {
-  if( parseInt( $('#one').css('left') ) >= 860 ) {
+  if( parseInt( $('#one').css('left') ) >= 850 ) {
     alert('Player One Wins!');
     isKeyOn = false;
   }
@@ -56,43 +164,45 @@ function oneWon() {
 
 /* Player 2 Win Verifier */
 function twoWon() {
-  if( parseInt( $('#two').css('left') ) >= 860 ) {
+  if( parseInt( $('#two').css('left') ) >= 850 ) {
     alert('Player Two Wins!');
     isKeyOn = false;
   }
 }
 
+/* Appends Random Letters for Player 1 */
 function oneRandomChar() {
   var randomNumber = Math.floor (( Math.random() * 100 ));
   if (randomNumber < 25 ) {
     player1.append('<p>a</p>');
-    return 'a';
-  } else if (randomNumber > 25 && randomNumber < 50) {
+    oneKey = 'a';
+  } else if (randomNumber >= 25 && randomNumber < 50) {
     player1.append('<p>s</p>');
-    return 's';
-  } else if (randomNumber > 50 && randomNumber < 75) {
+    oneKey = 's';
+  } else if (randomNumber >= 50 && randomNumber < 75) {
     player1.append('<p>d</p>');
-    return 'd';
+    oneKey = 'd';
   } else {
     player1.append('<p>f</p>');
-    return 'f';
+    oneKey = 'f';
   }
 }
 
+/* Appends Random Letters for Player 2 */
 function twoRandomChar() {
   var randomNumber = Math.floor (( Math.random() * 100 ));
   if (randomNumber < 25 ) {
     player2.append('<p>j</p>');
-    return 'j';
-  } else if (randomNumber > 25 && randomNumber < 50) {
+    twoKey = 'j';
+  } else if (randomNumber >= 25 && randomNumber < 50) {
     player2.append('<p>k</p>');
-    return 'k';
-  } else if (randomNumber > 50 && randomNumber < 75) {
+    twoKey = 'k';
+  } else if (randomNumber >= 50 && randomNumber < 75) {
     player2.append('<p>l</p>');
-    return 'l';
+    twoKey = 'l';
   } else {
     player2.append('<p>;</p>');
-    return ';';
+    twoKey = ';';
   }
 }
 
