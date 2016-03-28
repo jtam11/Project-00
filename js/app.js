@@ -181,12 +181,15 @@ $('#reset').on('click', function resetRace() {
   isKeyOn = false;
   $('#start').attr('disabled', false);
   $messages.text('Click Start');
+  $('#oneWinner').css('border', '3px solid black');
+  $('#twoWinner').css('border', '3px solid black');
 });
 
 /* Player 1 Win Verifier */
 function oneWon() {
   if( parseInt( player1.css('left') ) >= 850 ) {
     isKeyOn = false;
+    $('#oneWinner').css('border', '8px solid #1AF906');
     $messages.text('Player 1 Wins! Reset to play again!');
   }
 }
@@ -195,6 +198,7 @@ function oneWon() {
 function twoWon() {
   if( parseInt( player2.css('left') ) >= 850 ) {
     isKeyOn = false;
+    $('#twoWinner').css('border', '8px solid #1AF906');
     $messages.text('Player 2 Wins! Reset to play again!');
   }
 }
@@ -239,19 +243,18 @@ function twoRandomChar() {
 // function Randomizer (player, firstkey, secondkey, thirdkey, fourthkey, varname) {
 //   var randomNumber = Math.floor (( Math.random() * 100 ));
 //   if (randomNumber < 25 ) {
-//     player.append('<p>firstkey</p>');
+//     player.append('<p>' + firstkey + '</p>');
 //     varname = 'firstkey';
 //   } else if (randomNumber >= 25 && randomNumber < 50) {
-//     player.append('<p>secondkey</p>');
+//     player.append('<p>' + secondkey + '</p>');
 //     varname = 'secondkey';
 //   } else if (randomNumber >= 50 && randomNumber < 75) {
-//     player.append('<p>thirdkey</p>');
+//     player.append('<p>' + thirdkey + '</p>');
 //     varname = 'thirdkey';
 //   } else {
-//     player.append('<p>fourthkey</p>');
+//     player.append('<p>' + fourthkey + '</p>');
 //     varname = 'fourthkey';
 //   }
 // }
 //
-// var secondRandomChar = Randomizer('player2', 'j', 'k', 'l', ';', 'twoKey');
-// console.log (secondRandomChar);
+// var p2RandomChar = Randomizer('j', 'k', 'l', ';', 'twoKey');
