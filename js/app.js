@@ -3,14 +3,16 @@ var player2 = $('#two');
 var isKeyOn = false;
 var oneKey = '';
 var twoKey = '';
+var $messages = $('.messages');
 
 
 $(document).on('ready', function () {
 
   console.log('JS is loaded!');
+  $messages.text('Click Start');
 
     /* Moving Player 1 */
-  $(document).on('keydown', function (event) {
+  $('body').on('keydown', function (event) {
     if (oneKey === 'a') {
       if (event.keyCode === 65 && isKeyOn) {
         player1.empty();
@@ -83,7 +85,7 @@ $(document).on('ready', function () {
   });
 
   /* Moving Player 2 */
-  $(document).on('keydown', function (event) {
+  $('body').on('keydown', function (event) {
     if (twoKey === 'j') {
       if (event.keyCode === 74 && isKeyOn) {
         player2.empty();
@@ -162,6 +164,7 @@ $('#start').on('click', function startRace() {
   oneRandomChar();
   twoRandomChar();
   isKeyOn = true;
+  $messages.text('GO!');
 });
 
 /* Reset Button */
@@ -172,21 +175,22 @@ $('#reset').on('click', function resetRace() {
   player2.empty();
   isKeyOn = false;
   $('#start').attr('disabled', false);
+  $messages.text('Click Start');
 });
 
 /* Player 1 Win Verifier */
 function oneWon() {
   if( parseInt( player1.css('left') ) >= 850 ) {
-    alert('Player One Wins!');
     isKeyOn = false;
+    $messages.text('Player 1 Wins! Reset to play again!');
   }
 }
 
 /* Player 2 Win Verifier */
 function twoWon() {
   if( parseInt( player2.css('left') ) >= 850 ) {
-    alert('Player Two Wins!');
     isKeyOn = false;
+    $messages.text('Player 2 Wins! Reset to play again!');
   }
 }
 
@@ -225,12 +229,3 @@ function twoRandomChar() {
     twoKey = ';';
   }
 }
-
-// function Sprite(name, color) {
-//
-//   this.name = name;
-//   this.color = color;
-//   this.move = function () {
-//
-//   };
-// }
