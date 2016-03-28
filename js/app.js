@@ -234,3 +234,24 @@ function twoRandomChar() {
     twoKey = ';';
   }
 }
+
+/* Randomizer Constructor */
+// function Randomizer (player, firstkey, secondkey, thirdkey, fourthkey, varname) {
+//   var randomNumber = Math.floor (( Math.random() * 100 ));
+//   if (randomNumber < 25 ) {
+//     player.append('<p>firstkey</p>');
+//     varname = 'firstkey';
+//   } else if (randomNumber >= 25 && randomNumber < 50) {
+//     player.append('<p>secondkey</p>');
+//     varname = 'secondkey';
+//   } else if (randomNumber >= 50 && randomNumber < 75) {
+//     player.append('<p>thirdkey</p>');
+//     varname = 'thirdkey';
+//   } else {
+//     player.append('<p>fourthkey</p>');
+//     varname = 'fourthkey';
+//   }
+// }
+//
+// var secondRandomChar = Randomizer('player2', 'j', 'k', 'l', ';', 'twoKey');
+// console.log (secondRandomChar);
