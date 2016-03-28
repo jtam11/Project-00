@@ -8,8 +8,28 @@ var $messages = $('.messages');
 
 $(document).on('ready', function () {
 
+
+  //select player color
   console.log('JS is loaded!');
   $messages.text('Click Start');
+   $(".btn-group").on('click',
+    function(e){
+      console.log(e.target.id);
+      if (e.target.id === "p1-color"){
+      $(player1).css("background-color", $("#color-picker").val());
+    }else {
+      $(player2).css("background-color", $("#color-picker").val());
+    }
+ });
+ $("#p2-color").on('click',
+  function(event){
+  }
+);
+
+
+
+
+
 
   /* Moving Player 1 */
   $('body').on('keydown', function (event) {
