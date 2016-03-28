@@ -13,14 +13,14 @@ $(document).on('ready', function () {
 
   /* Moving Player 1 */
   $('body').on('keydown', function (event) {
-    /* Checks if the randomed letter is an 'a' */
+    /* Checks if the randomed letter is an 'a'. */
     if (oneKey === 'a') {
       /* If 'a' is pressed, player moves forwards, another random letter is
       generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 65 && isKeyOn) {
         player1.empty();
         player1.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         oneRandomChar();
         oneWon();
@@ -30,16 +30,19 @@ $(document).on('ready', function () {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         oneRandomChar();
       }
+      /* Checks if the randomed letter is an 's'. */
     } else if (oneKey === 's') {
+      /* If 's' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 83 && isKeyOn) {
         player1.empty();
         player1.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         oneRandomChar();
         oneWon();
@@ -47,16 +50,19 @@ $(document).on('ready', function () {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         oneRandomChar();
       }
+      /* Checks if the randomed letter is an 'd'. */
     } else if (oneKey === 'd') {
+      /* If 'd' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 68 && isKeyOn) {
         player1.empty();
         player1.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         oneRandomChar();
         oneWon();
@@ -64,16 +70,19 @@ $(document).on('ready', function () {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         oneRandomChar();
       }
+      /* Checks if the randomed letter is an 'f'. */
     } else if (oneKey === 'f') {
+      /* If 'f' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 70 && isKeyOn) {
         player1.empty();
         player1.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         oneRandomChar();
         oneWon();
@@ -81,7 +90,7 @@ $(document).on('ready', function () {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
           player1.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         oneRandomChar();
@@ -91,11 +100,14 @@ $(document).on('ready', function () {
 
   /* Moving Player 2 */
   $('body').on('keydown', function (event) {
+    /* Checks if the randomed letter is an 'j'. */
     if (twoKey === 'j') {
+      /* If 'j' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 74 && isKeyOn) {
         player2.empty();
         player2.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         twoRandomChar();
         twoWon();
@@ -103,16 +115,19 @@ $(document).on('ready', function () {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         twoRandomChar();
       }
+      /* Checks if the randomed letter is an 'k'. */
     } else if (twoKey === 'k') {
+      /* If 'k' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 75 && isKeyOn) {
         player2.empty();
         player2.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         twoRandomChar();
         twoWon();
@@ -120,16 +135,19 @@ $(document).on('ready', function () {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         twoRandomChar();
       }
+      /* Checks if the randomed letter is an 'l'. */
     } else if (twoKey === 'l') {
+      /* If 'l' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 76 && isKeyOn) {
         player2.empty();
         player2.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         twoRandomChar();
         twoWon();
@@ -137,16 +155,19 @@ $(document).on('ready', function () {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         twoRandomChar();
       }
+      /* Checks if the randomed letter is an ';'. */
     } else if (twoKey === ';') {
+      /* If ';' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 186 && isKeyOn) {
         player2.empty();
         player2.animate({
-        left: "+=20px"
+        left: "+=50px"
         }, 50);
         twoRandomChar();
         twoWon();
@@ -154,7 +175,7 @@ $(document).on('ready', function () {
         player2.empty();
         if ( parseInt( player2.css('left') ) > 18 ) {
           player2.animate({
-          left: "-=20px"
+          left: "-=50px"
           }, 50);
         }
         twoRandomChar();
@@ -240,7 +261,7 @@ function twoRandomChar() {
 }
 
 /* Randomizer Constructor */
-// function Randomizer (player, firstkey, secondkey, thirdkey, fourthkey, varname) {
+// function Randomizer (player /*selector*/, firstkey/**/, secondkey, thirdkey, fourthkey, varname) {
 //   var randomNumber = Math.floor (( Math.random() * 100 ));
 //   if (randomNumber < 25 ) {
 //     player.append('<p>' + firstkey + '</p>');
@@ -257,4 +278,7 @@ function twoRandomChar() {
 //   }
 // }
 //
-// var p2RandomChar = Randomizer('j', 'k', 'l', ';', 'twoKey');
+// var p1RandomChar = Randomizer( $('#one'), 'a', 's', 'd', 'f', 'oneKey');
+// console.log(p1RandomChar);
+// var p2RandomChar = Randomizer( $('#two'),'j', 'k', 'l', ';', 'twoKey' );
+// console.log(p2RandomChar);
