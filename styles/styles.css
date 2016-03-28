@@ -31,27 +31,33 @@ body{
   background-repeat: repeat-x;
   background-size: contain;
   padding-top: 10px;
-  border: 3px solid black;
   height: 80px;
   width: 944px;
 }
+  #oneWinner {
+    border: 3px solid black;
+  }
+  #twoWinner {
+    border: 3px solid black;
+  }
 .player {
   position: absolute;
   height: 44px;
   width: 44px;
-  border: 2px solid black
+  border: 2px solid black;
+  border-radius: 20px;
 }
   #one {
     color: #000000;
     text-align: center;
-    background-color: #ff8c00;
+    background: linear-gradient(120deg, #ff8c00 20%, #FFDCB2);
 
     left: 18px;
   }
   #two {
     color: #000000;
     text-align: center;
-    background-color: #9EF957;
+    background: linear-gradient(120deg, #9EF957 20%, #E1FDCC);
     left: 18px;
   }
 p {
