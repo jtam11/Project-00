@@ -1,30 +1,60 @@
+body{
+  background-image: url(http://fantastic.pk/wp-content/uploads/2014/05/the-island-with-palm-trees.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+}
+
+.row {
+  color: white;
+}
+
+#game {
+  font-family: Papyrus, fantasy;
+  font-size: 50px;
+  color: white;
+}
+
+.messages {
+  font-size: 35px;
+  color: white;
+}
+
 .track {
-  background-color: white;
+  background-image: url(http://blog.teamthinklabs.com/wp-content/uploads/2014/08/Screen-Shot-2014-08-27-at-3.43.06-PM.png);
+  background-repeat: repeat-x;
+  background-size: contain;
+  padding-top: 10px;
   border: 3px solid black;
-  height: 50px;
+  height: 80px;
   width: 944px;
 }
 .player {
   position: absolute;
   height: 44px;
   width: 44px;
+  border: 2px solid black
 }
   #one {
+    color: #000000;
     text-align: center;
     background-color: #ff8c00;
+
     left: 18px;
   }
   #two {
+    color: #000000;
     text-align: center;
-    background-color: #00e7eb;
+    background-color: #9EF957;
     left: 18px;
   }
 p {
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
 }
 .finish {
   float: right;
+  margin-top: 11px;
   width: 50px;
   height: 44px;
   right: 18px;
@@ -40,10 +70,22 @@ p {
   text-align: center;
 }
   #start {
+    border: 1px solid black;
     margin-right: 50px;
     width: 100px;
   }
   #reset{
+    border: 1px solid black;
     margin-left: 50px;
     width: 100px;
+  }
+
+  #directions {
+    color: #C6E56C;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgba(152,84,38,0.8);
+    font-size: 20px;
+    width: 750px;
+
   }
