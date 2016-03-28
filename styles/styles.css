@@ -50,16 +50,14 @@ body{
   #one {
     color: #000000;
     text-align: center;
-    background-color: green;
-    /*background: linear-gradient(120deg, #ff8c00 20%, #FFDCB2);*/
+    background: linear-gradient(120deg, #ff8c00 20%, #FFDCB2);
 
     left: 18px;
   }
   #two {
     color: #000000;
     text-align: center;
-    /*background: linear-gradient(120deg, #9EF957 20%, #E1FDCC);*/
-    background-color: blue;
+    background: linear-gradient(120deg, #9EF957 20%, #E1FDCC);
     left: 18px;
   }
 p {
