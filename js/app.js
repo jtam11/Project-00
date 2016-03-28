@@ -11,9 +11,12 @@ $(document).on('ready', function () {
   console.log('JS is loaded!');
   $messages.text('Click Start');
 
-    /* Moving Player 1 */
+  /* Moving Player 1 */
   $('body').on('keydown', function (event) {
+    /* Checks if the randomed letter is an 'a' */
     if (oneKey === 'a') {
+      /* If 'a' is pressed, player moves forwards, another random letter is
+      generated, and a function checks to see if player wins with this move. */
       if (event.keyCode === 65 && isKeyOn) {
         player1.empty();
         player1.animate({
@@ -21,6 +24,8 @@ $(document).on('ready', function () {
         }, 50);
         oneRandomChar();
         oneWon();
+        /* If player hits any of the other keys in their control, player moves
+        backwards and another random letter is generated */
       } else if ( (event.keyCode === 83 || event.keyCode === 68 || event.keyCode === 70) && isKeyOn ) {
         player1.empty();
         if ( parseInt( player1.css('left') ) > 18 ) {
