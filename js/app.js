@@ -11,6 +11,8 @@ $(document).on('ready', function () {
   console.log('JS is loaded!');
   $messages.text('Click Start');
 
+
+  /* TODO: Holy crap.  First of all, this is some great code. This game is frustratingly hard but fun.  Good job.  That being said, the below code can no doubt be refactored to be MUCH smaller.  I can guarantee your code would be much more elegant with an OOP refactor.  This is good work, though. Have no doubt of that :) -jc */
   /* Moving Player 1 */
   $('body').on('keydown', function (event) {
     /* Checks if the randomed letter is an 'a'. */
@@ -206,6 +208,7 @@ $('#reset').on('click', function resetRace() {
   $('#twoWinner').css('border', '3px solid black');
 });
 
+/* TODO: oneWon and twoWon can be refactored to be one function that takes the word 'one' or 'two' as an argument. -jc */
 /* Player 1 Win Verifier */
 function oneWon() {
   if( parseInt( player1.css('left') ) >= 850 ) {
@@ -224,6 +227,7 @@ function twoWon() {
   }
 }
 
+/* TODO: oneRandomChar and twoRandomChar can be refactored to be one function that takes the number '1' or '2' as an argument. -jc */
 /* Appends Random Letters for Player 1 */
 function oneRandomChar() {
   var randomNumber = Math.floor (( Math.random() * 100 ));
@@ -260,6 +264,8 @@ function twoRandomChar() {
   }
 }
 
+/* TODO: Remove unused or commented-out code from production code -jc
+*/
 /* Randomizer Constructor */
 // function Randomizer (player /*selector*/, firstkey/**/, secondkey, thirdkey, fourthkey, varname) {
 //   var randomNumber = Math.floor (( Math.random() * 100 ));
